@@ -24,9 +24,6 @@ export class UserController {
     if (!user) {
       throw new NotFoundException('User not found');
     }
-
-    // Here you can add logic to check if the password matches (e.g., bcrypt comparison)
-
     return { message: 'Login successful' };
   }
 }
