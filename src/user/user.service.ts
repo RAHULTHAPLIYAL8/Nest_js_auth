@@ -20,4 +20,15 @@ export class UserService {
   async findByEmail(email: string): Promise<User | null> {
     return this.userModel.findOne({ email }).exec();
   }
-}
+
+  async updatePassword(email: string, newPassword: string): Promise<User | null> {
+    return this.userModel.findOneAndUpdate(
+      { email }, 
+      { password: newPassword }, 
+      { new: true } 
+    ).exec();
+  }
+  }
+
+ 
+
